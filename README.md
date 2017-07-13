@@ -16,6 +16,12 @@ please keep in mind that like a `Makefile.PL` or `Build.PL`, an [alienfile](http
 is arbitrary Perl code, and should be appropriately vetted before being
 used in an environment with security requirements.
 
+# CAVEATS
+
+This plugin is only able to rewrite URLs that are fetched through the standard
+[Alien::Build](https://metacpan.org/pod/Alien::Build) URL fetching interface, and only URLs that are supported by
+[LWP::UserAgent](https://metacpan.org/pod/LWP::UserAgent) and [URI](https://metacpan.org/pod/URI).
+
 # SEE ALSO
 
 - [Alien::Build](https://metacpan.org/pod/Alien::Build)
