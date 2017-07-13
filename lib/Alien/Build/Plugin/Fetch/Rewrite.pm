@@ -21,6 +21,7 @@ In your ~/.alienbuild/rc.pl:
  sub rewrite {
    my($build, $uri) = @_;
    
+   # $build isa Alien::Build
    # $uri isa URI
    
    if($uri->host eq 'ftp.gnu.org')
@@ -33,6 +34,8 @@ In your ~/.alienbuild/rc.pl:
      $uri->host('/ftp.gnu.org' . $uri->path);
    }
  }
+ 
+ 1;
 
 =head1 DESCRIPTION
 
