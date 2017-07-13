@@ -7,6 +7,7 @@ use URI;
 use Alien::Build;
 use Alien::Build::Plugin;
 use Alien::Build::Plugin::Fetch::LWP;
+use Alien::Build::Plugin::Decode::HTML;
 
 # ABSTRACT: Alien::Build plugin to rewrite network requests to local resources
 # VERSION
@@ -48,6 +49,7 @@ sub init
   }
 
   Alien::Build::Plugin::Fetch::LWP->new->init($meta);
+  Alien::Build::Plugin::Decode::HTML->new->init($meta);
 
   $meta->around_hook(fetch => sub {
     my($f, $build, $url) = @_;
