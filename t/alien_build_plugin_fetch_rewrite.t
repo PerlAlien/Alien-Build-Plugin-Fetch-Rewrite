@@ -1,6 +1,11 @@
 use Test2::V0;
+use Test::Alien::Build;
 use Alien::Build::Plugin::Fetch::Rewrite;
 
-ok 1, 'todo';
+$ENV{ALIEN_BUILD_POSTLOAD} = 'Fetch::Rewrite';
+
+my $build = alienfile_ok q{
+  use alienfile;
+};
 
 done_testing
