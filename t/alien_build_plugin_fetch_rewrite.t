@@ -6,6 +6,12 @@ $ENV{ALIEN_BUILD_POSTLOAD} = 'Fetch::Rewrite';
 
 my $build = alienfile_ok q{
   use alienfile;
+  
+  share {
+  
+    fetch sub { die 'oh noes!' }
+  
+  };
 };
 
 done_testing
