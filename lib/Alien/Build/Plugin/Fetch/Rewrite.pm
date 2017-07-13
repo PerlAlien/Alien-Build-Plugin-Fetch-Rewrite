@@ -14,7 +14,25 @@ use Alien::Build::Plugin::Decode::HTML;
 
 =head1 SYNOPSIS
 
- export ALIEN_BUILD_POSTLOAD=Fetch::Rewrite
+In your ~/.alienbuild/rc.pl:
+
+ postload 'Fetch::Rewrite';
+ 
+ sub rewrite {
+   my($build, $uri) = @_;
+   
+   # $uri isa URI
+   
+   if($uri->host eq 'ftp.gnu.org')
+   {
+     # if we see a request to ftp.gnu.org (either ftp or http)
+     # we redirect it to the local mirror at
+     # http://mirror.example.com/ftp.gnu.org
+     $uri->scheme('http');
+     $uri->host('mirror.example.com');
+     $uri->host('/ftp.gnu.org' . $uri->path);
+   }
+ }
 
 =head1 DESCRIPTION
 

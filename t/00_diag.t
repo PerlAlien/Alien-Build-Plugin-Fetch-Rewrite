@@ -11,14 +11,19 @@ my $post_diag;
 
 $modules{$_} = $_ for qw(
   Alien::Build
+  Alien::Build::Plugin::Decode::HTML
   Alien::Build::Plugin::Fetch::LWP
   Capture::Tiny
   ExtUtils::MakeMaker
+  HTML::LinkExtor
+  LWP::Protocol::https
+  LWP::UserAgent
   Path::Tiny
   Test2::Mock
   Test2::V0
   Test::Alien::Build
   URI
+  URI::Escape
 );
 
 
