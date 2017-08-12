@@ -58,9 +58,6 @@ L<LWP::UserAgent> and L<URI>.
 sub init
 {
   my($self, $meta) = @_;
-  # this just lets people know that we have loaded
-  # this plugin.
-  Alien::Build->log("init");
 
   unless($meta->prop->{start_url})
   {
