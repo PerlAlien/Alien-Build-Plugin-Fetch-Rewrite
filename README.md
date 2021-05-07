@@ -1,4 +1,4 @@
-# Alien::Build::Plugin::Fetch::Rewrite ![linux](https://github.com/plicease/Alien-Build-Plugin-Fetch-Rewrite/workflows/linux/badge.svg)
+# Alien::Build::Plugin::Fetch::Rewrite ![linux](https://github.com/plicease/Alien-Build-Plugin-Fetch-Rewrite/workflows/linux/badge.svg) ![macos](https://github.com/plicease/Alien-Build-Plugin-Fetch-Rewrite/workflows/macos/badge.svg) ![windows](https://github.com/plicease/Alien-Build-Plugin-Fetch-Rewrite/workflows/windows/badge.svg) ![cygwin](https://github.com/plicease/Alien-Build-Plugin-Fetch-Rewrite/workflows/cygwin/badge.svg) ![msys2-mingw](https://github.com/plicease/Alien-Build-Plugin-Fetch-Rewrite/workflows/msys2-mingw/badge.svg)
 
 Alien::Build plugin to rewrite network requests to local resources
 
