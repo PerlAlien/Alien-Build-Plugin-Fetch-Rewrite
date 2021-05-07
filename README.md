@@ -1,4 +1,4 @@
-# Alien::Build::Plugin::Fetch::Rewrite [![Build Status](https://secure.travis-ci.org/plicease/Alien-Build-Plugin-Fetch-Rewrite.png)](http://travis-ci.org/plicease/Alien-Build-Plugin-Fetch-Rewrite)
+# Alien::Build::Plugin::Fetch::Rewrite ![linux](https://github.com/plicease/Alien-Build-Plugin-Fetch-Rewrite/workflows/linux/badge.svg)
 
 Alien::Build plugin to rewrite network requests to local resources
 
@@ -6,26 +6,28 @@ Alien::Build plugin to rewrite network requests to local resources
 
 In your ~/.alienbuild/rc.pl:
 
-    postload 'Fetch::Rewrite';
-    
-    sub rewrite {
-      my($build, $uri) = @_;
-      
-      # $build isa Alien::Build
-      # $uri isa URI
-      
-      if($uri->host eq 'ftp.gnu.org')
-      {
-        # if we see a request to ftp.gnu.org (either ftp or http)
-        # we redirect it to the local mirror at
-        # http://mirror.example.com/ftp.gnu.org
-        $uri->scheme('http');
-        $uri->host('mirror.example.com');
-        $uri->host('/ftp.gnu.org' . $uri->path);
-      }
-    }
-    
-    1;
+```perl
+postload 'Fetch::Rewrite';
+
+sub rewrite {
+  my($build, $uri) = @_;
+
+  # $build isa Alien::Build
+  # $uri isa URI
+
+  if($uri->host eq 'ftp.gnu.org')
+  {
+    # if we see a request to ftp.gnu.org (either ftp or http)
+    # we redirect it to the local mirror at
+    # http://mirror.example.com/ftp.gnu.org
+    $uri->scheme('http');
+    $uri->host('mirror.example.com');
+    $uri->host('/ftp.gnu.org' . $uri->path);
+  }
+}
+
+1;
+```
 
 # DESCRIPTION
 
