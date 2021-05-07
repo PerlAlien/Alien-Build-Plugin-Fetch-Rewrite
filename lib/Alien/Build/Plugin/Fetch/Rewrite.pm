@@ -20,10 +20,10 @@ In your ~/.alienbuild/rc.pl:
  
  sub rewrite {
    my($build, $uri) = @_;
-   
+ 
    # $build isa Alien::Build
    # $uri isa URI
-   
+ 
    if($uri->host eq 'ftp.gnu.org')
    {
      # if we see a request to ftp.gnu.org (either ftp or http)
@@ -85,7 +85,7 @@ sub init
         $url = "$copy";
       }
     }
-    
+
     return $f->($build, $url);
   });
 }
