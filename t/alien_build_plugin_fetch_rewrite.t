@@ -7,6 +7,12 @@ use Capture::Tiny qw( capture_merged );
 
 $ENV{ALIEN_BUILD_POSTLOAD} = 'Fetch::Rewrite';
 
+# This plugin doesn't make any real internet
+# connections, and uses a fake protocol for
+# testing that isn't recognized by AB as
+# being safe.
+$ENV{ALIEN_DOWNLOAD_RULE} = 'warn';
+
 my $build = alienfile_ok q{
   use alienfile;
 
