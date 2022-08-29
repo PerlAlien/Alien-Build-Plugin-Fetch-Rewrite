@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Handle ALIEN_DOWNLOAD_RULE overrides (gh#5)
 
 0.02      2017-08-12 09:17:46 -0400
   - Remove annoying init log
